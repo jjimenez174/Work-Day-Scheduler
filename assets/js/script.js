@@ -4,33 +4,33 @@ $(document).ready(function(){
  
 //Display Current Date & Time
 function updateCurrentHour() {
-  $("#currentDay").text(dayjs().format('dddd, MMMM D YYYY h:mm A', true));
+  $("#currentDay").text(dayjs().format('dddd, MMMM D YYYY h:mm A'));
 }
-updateCurrentHour();
-setInterval(updateCurrentHour, 1000);
+  updateCurrentHour();
+  setInterval(updateCurrentHour, 1000);
 
-var currentTime = dayjs().format("HH")
+  var currentTime = dayjs().format('h');
 
 //Current Time Determines the Past, the Present and the Future
-  $(".time-block").each(function(){
-    var timeBlock = parseInt($(this).attr("id").split("-")[1]);
-    
-    if (timeBlock < currentTime){
-      $(this).removeClass("future");
-      $(this).removeClass("present");
-      $(this).addClass("past");
-    }
-    else if (timeBlock === currentTime){
-      $(this).removeClass("past");
-      $(this).removeClass("future");
-      $(this).addClass("present");
-    }
-    else {
-      $(this).removeClass("present");
-      $(this).removeClass("past");
-      $(this).addClass("future");
-    }
-  });
+$(".time-block").each(function(){
+  var timeBlock = parseInt($(this).attr("id").split("-")[1]);
+  
+  if (timeBlock < currentTime){
+    $(this).removeClass("future");
+    $(this).removeClass("present");
+    $(this).addClass("past");
+  }
+  else if (timeBlock === currentTime){
+    $(this).removeClass("past");
+    $(this).removeClass("future");
+    $(this).addClass("present");
+  }
+  else {
+    $(this).removeClass("present");
+    $(this).removeClass("past");
+    $(this).addClass("future");
+  }
+});
 
 //Save Date
 $(".saveBtn").on("click", function(e) {
@@ -40,7 +40,7 @@ $(".saveBtn").on("click", function(e) {
   localStorage.setItem(time, toDo);
 });
 
-// Get Item From Local Storage
+//Get Item From Local Storage
 $("#hour-09 .description").val(localStorage.getItem("09"));
 $("#hour-10 .description").val(localStorage.getItem("10"));
 $("#hour-11 .description").val(localStorage.getItem("11"));
