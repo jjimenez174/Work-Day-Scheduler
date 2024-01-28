@@ -2,25 +2,24 @@ $(document).ready(function(){
   //console.log("Ready")
 });  
  
-//Display Current Date & Time
+// Display Current Date & Time
 function updateCurrentHour() {
   $("#currentDay").text(dayjs().format('dddd, MMMM D YYYY h:mm A'));
 }
   updateCurrentHour();
   setInterval(updateCurrentHour, 1000);
 
-  var currentTime = dayjs().format('h');
-
 //Current Time Determines the Past, the Present and the Future
-$(".time-block").each(function(){
+$(".time-block").each(function(){ 
+  var currentTime = dayjs().format('h');
   var timeBlock = parseInt($(this).attr("id").split("-")[1]);
   
-  if (timeBlock < currentTime){
+  if (currentTime < timeBlock){
     $(this).removeClass("future");
     $(this).removeClass("present");
     $(this).addClass("past");
   }
-  else if (timeBlock === currentTime){
+  else if (currentTime === timeBlock){
     $(this).removeClass("past");
     $(this).removeClass("future");
     $(this).addClass("present");
