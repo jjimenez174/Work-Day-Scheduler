@@ -13,14 +13,15 @@ function updateCurrentHour() {
 $(".time-block").each(function(){ 
   var currentTime = dayjs().format('h');
   var timeBlock = parseInt($(this).attr("id").split("-")[1]);
+  //console.log(timeBlock , currentTime)
   
   if (currentTime < timeBlock){
-    $(this).removeClass("future");
-    $(this).removeClass("present");
-    $(this).addClass("past");
+   $(this).removeClass("future");
+   $(this).removeClass("present");
+   $(this).addClass("past");
   }
   else if (currentTime === timeBlock){
-    $(this).removeClass("past");
+   $(this).removeClass("past");
     $(this).removeClass("future");
     $(this).addClass("present");
   }
@@ -30,6 +31,18 @@ $(".time-block").each(function(){
     $(this).addClass("future");
   }
 });
+// $(".time-block").each(function() {
+//   var currentTime = dayjs().format('H');
+//   var timeBlock = parseInt($(this).attr("id").split("-")[1]);
+
+//   if (currentTime < timeBlock) {
+//    $(this).removeClass("present future").addClass("future");
+//   } else if (currentTime === timeBlock) {
+//     $(this).removeClass("past future").addClass("present");
+//   } else {
+//     $(this).removeClass("past present").addClass("past");
+//   }
+// });
 
 //Save Date
 $(".saveBtn").on("click", function(e) {
