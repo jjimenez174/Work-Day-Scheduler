@@ -11,7 +11,7 @@ function updateCurrentHour() {
 
 //Current Time Determines the Past, the Present and the Future
 $(".time-block").each(function(){ 
-  var currentTime = dayjs().format('h');
+  var currentTime = parseInt(dayjs().format('H'));
   var timeBlock = parseInt($(this).attr("id").split("-")[1]);
   //console.log(timeBlock , currentTime)
   

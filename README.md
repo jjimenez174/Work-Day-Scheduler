@@ -1,7 +1,7 @@
 # Work-Day-Scheduler
 
 ## Description
-
+The user can use the work day schedule to write any tasks they need to do during each hour period. The schedule is from 9am-5pm. It’s color coded to let the user know if it’s in the present, past and future time. 
 
 ## Features 
 * The current date and time is display.
@@ -10,7 +10,7 @@
     * ![#b0e0e6](https://placehold.co/15X15/b0e0e6/b0e0e6.png) Present
     * ![#e6e6fa](https://placehold.co/15X15/e6e6fa/e6e6fa.png) Future
 * Enter tasks in each time-block.
-* Save the tasks.
+* Save the task.
 
 
 ## Website Preview
