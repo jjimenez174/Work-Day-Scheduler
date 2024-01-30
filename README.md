@@ -14,7 +14,7 @@ The user can use the work day schedule to write any tasks they need to do during
 
 
 ## Website Preview
-![image]()
+![image](./assets/images/ss.png)
 
 ## Link Deploy Application
 
